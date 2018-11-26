@@ -1,0 +1,10 @@
+--- # playbook to deploy website on multiple servers
+
+- hosts: webserver
+  user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  roles: 
+  - webservers

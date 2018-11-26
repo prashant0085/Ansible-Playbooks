@@ -1,0 +1,21 @@
+- name: httpd_installed
+  service: 
+    name: httpd
+    state: restarted
+
+- name: apache2_installed
+  service:
+    name: apache2
+    state: restarted
+
+- name: deployed_on_redhat
+  service:
+    name: httpd
+    state: restarted
+  when: ansible_os_family == 'RedHat'
+
+- name: deployed_on_debian
+  service:
+    name: apache2
+    state: restarted
+  when: ansible_os_family == 'Debian'
