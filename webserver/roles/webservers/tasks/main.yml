@@ -18,8 +18,8 @@
   copy: 
     src: /home/ansible/website/static-website-example/
     dest: /var/www/html/
-    owner: root
-    group: root
+    owner: ansible
+    group: ansible
     mode: 0755
   notify:
   - deployed_on_redhat
